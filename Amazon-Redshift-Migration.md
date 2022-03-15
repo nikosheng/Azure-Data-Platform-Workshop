@@ -38,7 +38,7 @@ As our redshift cluster is in private subnet, which is not public accessed. Ther
 
 - Firstly, we need to create a `Windows` EC2 instance environment in AWS which is in the same VPC with redshift. Please ensure the `security group` rules are properly set.
 - Secondly, we will install `Integration Runtime` client in the windows EC2 instance and connect to `Azure Data Factory` integration runtimes. For more information, please refer to [Create a self-hosted integration runtime - Azure Data Factory & Azure Synapse | Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-factory/create-self-hosted-integration-runtime?tabs=data-factory)
-	![Integration runtime][IR-screenshot](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/02_IR.png)
+	![Integration runtime][IR-screenshot](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/02_IR.png?raw=true)
 
 - In addition, we need to install JDK/JRE runtime to perform the transfer operation in ADF, otherwise, you may encounter the errors below
 	```

@@ -6,7 +6,7 @@
 ### Create Redshift Cluster
 Navigate to AWS Redshift Console, we may create a redshift cluster `dc2.large` with trial usage, which is sufficient for our workshop. 
 
-![Create Redshift Cluster][redshift-screenshot](/pics/01_redshift_creation.png)
+![Create Redshift Cluster][redshift-screenshot](../pics/01_redshift_creation.png)
 
 ### Sample Data Preparation
 - Create a mysql docker environment to generate the sample data files for further loading to redshift

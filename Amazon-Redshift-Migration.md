@@ -6,7 +6,7 @@
 ### Create Redshift Cluster
 Navigate to AWS Redshift Console, we may create a redshift cluster `dc2.large` with trial usage, which is sufficient for our workshop. 
 
-[![Create Redshift Cluster][redshift-screenshot]](https://example.com)
+[![Create Redshift Cluster][redshift-screenshot]](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/01_redshift_creation.png)
 
 ### Sample Data Preparation
 - Create a mysql docker environment to generate the sample data files for further loading to redshift
@@ -38,7 +38,7 @@ As our redshift cluster is in private subnet, which is not public accessed. Ther
 
 - Firstly, we need to create a `Windows` EC2 instance environment in AWS which is in the same VPC with redshift. Please ensure the `security group` rules are properly set.
 - Secondly, we will install `Integration Runtime` client in the windows EC2 instance and connect to `Azure Data Factory` integration runtimes. For more information, please refer to [Create a self-hosted integration runtime - Azure Data Factory & Azure Synapse | Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-factory/create-self-hosted-integration-runtime?tabs=data-factory)
-	[![Integration runtime][IR-screenshot]](https://example.com)
+	[![Integration runtime][IR-screenshot]](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/02_IR.png)
 
 - In addition, we need to install JDK/JRE runtime to perform the transfer operation in ADF, otherwise, you may encounter the errors below
 	```
@@ -67,7 +67,9 @@ As our redshift cluster is in private subnet, which is not public accessed. Ther
 
 - Create ADF Pipeline to export Amazon Redshift data to ADLS Gen2, and the pipeline will automatically triggered for data transformation, compression and delta lake export. Please refer to `ECommerce_Load_Redshift_To_Synapse_support_live.zip` and import the file in ADF to reproduce the pipeline.
 - Trigger the pipeline
-	[![Integration runtime][IR-screenshot]](https://example.com)
+	[![Trigger Pipeline][TP-screenshot]](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/03_trigger_pipeline.png)
+- Wait for the pipline to run automatically and it will trigger a subflow to merge the data into delta lake format by Azure Databricks
+	[![Wait Pipeline][WP-screenshot]](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/pics/04_pipeline_running.png)
 
 ### Azure Synapse Delta Lake Query
 

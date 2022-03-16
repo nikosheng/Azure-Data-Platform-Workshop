@@ -8,8 +8,8 @@
 
 | Item | Content  |
 |--|--|
-| 1 | [Amazon Redshift Migration To Delta Lake]() |
-| 2 | [Amazon RDS Migration To Delta Lake]() |
+| 1 | [Amazon Redshift Migration To Delta Lake](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/Amazon-Redshift-Migration-To-Delta-Lake.md) |
+| 2 | [Amazon RDS Migration To Delta Lake](https://github.com/nikosheng/Azure-Data-Platform-Workshop/blob/main/Amazon-RDS-Migration-To-Delta-Lake.md) |
 
 
 ## Prerequisites

@@ -57,10 +57,10 @@ As our redshift cluster is in private subnet, which is not public accessed. Ther
 	```
 - Import data into redshift with `COPY` command
 	```
-		copy dev.azure.orders from 's3://nikofengazuremigration/redshift/orders.csv' 
-		iam_role 'arn:aws:iam::893573916412:role/AmazonRedshiftS3Role' 
-		TIMEFORMAT 'auto' 
-		csv ;
+	copy dev.azure.orders from 's3://nikofengazuremigration/redshift/orders.csv' 
+	iam_role 'arn:aws:iam::893573916412:role/AmazonRedshiftS3Role' 
+	TIMEFORMAT 'auto' 
+	csv ;
 	```
 	
 ### ADF Pipeline Setup

@@ -8,9 +8,9 @@
 
 | Item | Content  |
 |--|--|
-| 1 | [Amazon S3 Migration]() |
-| 2 | [Amazon RDS Migration]() |
-| 3 | [Amazon Redshift Migration]() |
+| 1 | [Amazon Redshift Migration To Delta Lake]() |
+| 2 | [Amazon RDS Migration To Delta Lake]() |
+
 
 ## Prerequisites
 

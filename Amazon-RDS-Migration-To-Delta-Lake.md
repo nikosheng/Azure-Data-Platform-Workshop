@@ -148,7 +148,7 @@ In the previous batch migration, we transfer the data from source to Azure Flex 
 		) as rows
 	WHERE customer_id IN (309, 829);
 	```
-
+	
 ### Schame Change
 - If we try to add a column `gender` to table `orders`, the schema change will be captured by Debezium, and it will send to topic `demo`, which is the server name of the debezium config.
 	```

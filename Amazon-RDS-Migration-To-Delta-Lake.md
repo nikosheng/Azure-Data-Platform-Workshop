@@ -155,6 +155,7 @@ In the previous batch migration, we transfer the data from source to Azure Flex 
     # Add a new column gender to table orders
     alter table demo.orders add column gender VARCHAR(10) NOT NULL DEFAULT 'NA';
 
+    # Validate the schema change event will be captured by kafka topic, which will be named by the <server name> in cdc config
     docker exec -it schema-registry bash -c 'kafka-avro-console-consumer --bootstrap-server wn0-nikoaz.55gugjr3douuxdwqs241cjkktf.bx.internal.cloudapp.net:9092,wn1-nikoaz.55gugjr3douuxdwqs241cjkktf.bx.internal.cloudapp.net:9092 \
     --topic demo \
     --property schema.registry.url="http://schema-registry:8081"'
@@ -162,6 +163,9 @@ In the previous batch migration, we transfer the data from source to Azure Flex 
 
 - insert new records with the latest schema and validate whether the change events will be applied to delta lake.
     ```
-    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address) values (388, 98558.51, 'Pontiac', 'G5', 'Leeds', 'Dibbert and Sons', '20204 Kipling Terrace');
-    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address) values (800, 80068.02, 'Audi', 'S8', 'York', 'Price-Davis', '97 Shasta Park');
+    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address, gender) values (1008, 83225.69, 'GMC', 'Sierra Denali', 'Exeter', 'Halvorson, Brown and Leffler', '3167 Golf Course Plaza', 'FEMALE');
+    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address, gender) values (1009, 50707.65, 'Pontiac', 'Bonneville', 'Leeds', 'Ziemann-Orn', '03 6th Lane', 'FEMALE');
+    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address, gender) values (1010, 168193.58, 'Mercedes-Benz', 'CL-Class', 'York', 'McLaughlin, Swift and Swift', '19091 Brown Crossing', 'MALE');
+    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address, gender) values (1011, 98558.51, 'Pontiac', 'G5', 'Leeds', 'Dibbert and Sons', '20204 Kipling Terrace', 'FEMALE');
+    insert into orders (customer_id, order_total_usd, make, model, delivery_city, delivery_company, delivery_address, gender) values (1012, 80068.02, 'Audi', 'S8', 'York', 'Price-Davis', '97 Shasta Park', 'MALE');
     ```
